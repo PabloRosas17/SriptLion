@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# simple function that will pull on a list of defined repositories , iteratively.
+
+# definition for all listed directories.
+repos=(
+ # define multiple repository locations here.
+ "/c/Users/YOUR_USERNAME/LOCATION_OF_GITHUB/GITHUB_REPOSITORY/"
+)
+
+#will pull from github on defined repos
+echo ""
+echo "performing git pull on" ${#repos[@]} " definition using pull"
+for repo in "${repos[@]}"
+do
+ echo ""
+ echo "*** Getting latest for" ${repo} "***"
+ cd "${repo}"
+ git pull
+ echo "*************************************"
+done
+
